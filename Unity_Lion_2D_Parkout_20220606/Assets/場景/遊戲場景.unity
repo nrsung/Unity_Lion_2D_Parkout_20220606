@@ -4359,6 +4359,7 @@ GameObject:
   - component: {fileID: 316591352}
   - component: {fileID: 316591356}
   - component: {fileID: 316591355}
+  - component: {fileID: 316591357}
   m_Layer: 0
   m_Name: "\u5FCD\u8005\u9F9C"
   m_TagString: Untagged
@@ -4490,6 +4491,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &316591357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316591351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbefc38aa7226ee44a344eea5323ba75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedRun: 3.5
+  heightJump: 350
 --- !u!1 &683240814
 GameObject:
   m_ObjectHideFlags: 0
@@ -4641,7 +4656,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7775, y: 1}
+    m_SensorSize: {x: 1.7769424, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
