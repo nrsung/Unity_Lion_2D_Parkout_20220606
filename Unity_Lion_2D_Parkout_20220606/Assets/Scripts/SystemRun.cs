@@ -40,15 +40,30 @@ namespace NRSUNG
         #endregion
 
         #region 事件 : 程式入口
+        // 喚醒事件 : 開始事件前執行一次 , 取得元件等等
+        private void Awake()
+        {
+            // ani 指定 忍者龜身上的 Animator
+            ani = GetComponent<Animator>();
+            rig = GetComponent<Rigidbody2D>();
+        }
         // 開始事件 : 撥放遊戲時執行一次
         // 初始化設定 . 例如 :
         private void Start()
         {
             print("哈囉 . 沃德 :D");
         }
+
+        // 更新事件 : 每秒執行約60次 60 Frame per second
+        private void Update()
+        {
+            //print("<color=yellow>更新事件執行中~</color>");
+        }
         #endregion
 
     }
+
+    
 
 }
 
