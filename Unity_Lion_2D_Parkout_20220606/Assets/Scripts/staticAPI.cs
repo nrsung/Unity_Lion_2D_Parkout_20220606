@@ -1,5 +1,7 @@
 
 using UnityEngine;
+using System;
+using System.Threading;
 
 namespace NRSUNG
 {
@@ -36,7 +38,7 @@ namespace NRSUNG
 
             print("Camera數量 : " + Camera.allCamerasCount);
             print("Application平台 : " + Application.platform);
-
+            
         }
         private void Update()
         {
@@ -49,6 +51,7 @@ namespace NRSUNG
             if (Input.anyKey)
             {
                 Debug.Log("A key or mouse click has been detected");
+                Thread.Sleep(1000);
             }
             
         }
