@@ -28,7 +28,7 @@ namespace NRSUNG
         // Range 範圍:僅限於數值類型資料 int, float, byte, long
 
         [SerializeField, Header("跑步速度"), Tooltip("這是角色的跑步速度"), Range(0, 100)]
-        private float speedRun = 3.5f;
+        private float speedRun = 15.5f;
         [SerializeField, Header("跳躍高度"), Range(0, 3000)]
         private float heightJump = 350;
         private Animator ani;
@@ -36,7 +36,14 @@ namespace NRSUNG
         #endregion
 
         #region 功能 : 實作該系統的複雜方法
-
+        // 方法 Method
+        // 語法
+        // 修飾詞 傳回資料類型 方法名稱(參數) { 程式 }
+        private void Run()
+        {
+            print("跑步中 ~");
+            rig.velocity = new Vector2(speedRun, rig.velocity.y);
+        }
         #endregion
 
         #region 事件 : 程式入口
@@ -51,13 +58,14 @@ namespace NRSUNG
         // 初始化設定 . 例如 :
         private void Start()
         {
-            print("哈囉 . 沃德 :D");
+            //print("哈囉 . 沃德 :D");
         }
 
         // 更新事件 : 每秒執行約60次 60 Frame per second
         private void Update()
         {
             //print("<color=yellow>更新事件執行中~</color>");
+            Run();
         }
         #endregion
 
