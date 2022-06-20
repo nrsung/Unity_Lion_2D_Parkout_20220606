@@ -10,6 +10,9 @@ namespace NRSUNG
     /// </summary>
     public class staticAPI : MonoBehaviour
     {
+        private Vector3 a = new Vector3(1, 1, 1);
+        private Vector3 b = new Vector3(22, 22, 22);
+
         private void Start()
         {
             /*
@@ -38,7 +41,22 @@ namespace NRSUNG
 
             print("Camera數量 : " + Camera.allCamerasCount);
             print("Application平台 : " + Application.platform);
-            
+
+            Physics.sleepThreshold = 10;
+            print("物理3D睡眠臨界值 :" + Physics.sleepThreshold);
+
+            Time.timeScale = 0.5f;
+            print("時間大小 : "+ Time.timeScale);
+
+            print("9.999去除小數(四捨五入) : " + Mathf.Round(9.999f));
+            print("9.999去除小數(直接進位) : " + Mathf.Ceil(9.999f));
+            print("9.999去除小數(無條件去除) : " + Mathf.Floor(9.999f));
+
+            float distance = Vector3.Distance(a, b);
+            print("<color=yellow>距離 : " + distance + "</color>");
+
+            Application.OpenURL("https://unity.com/");
+
         }
         private void Update()
         {
@@ -48,12 +66,12 @@ namespace NRSUNG
             print("隨機範圍 : " + rangeint);
             #endregion
             */
-            if (Input.anyKey)
-            {
-                Debug.Log("A key or mouse click has been detected");
-                Thread.Sleep(1000);
-            }
-            
+
+            //print("是否按下任一鍵 : " + Input.anyKey);
+            //print("遊戲經過時間 :" + Time.timeSinceLevelLoad);
+
+            print("<color=red>是否按下空白鍵 : " + Input.GetKeyDown(KeyCode.Space) + "</color>");
+
         }
     }
 
