@@ -9,7 +9,7 @@ namespace NRSUNG
     {
         #region 資料
         [SerializeField, Header("跳躍高度"), Range(0, 3000)]
-        private float heightJump = 350;
+        private float heightJump = 1050;
 
         private Animator ani;
         private Rigidbody2D rig;
