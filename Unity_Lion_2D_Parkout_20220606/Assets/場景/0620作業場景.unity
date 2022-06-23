@@ -435,6 +435,7 @@ MonoBehaviour:
   capsule: {fileID: 2032905186}
   sphere_collider: {fileID: 615724308}
   cam: {fileID: 1431545201}
+  rig: {fileID: 2032905191}
 --- !u!4 &2010008618
 Transform:
   m_ObjectHideFlags: 0
