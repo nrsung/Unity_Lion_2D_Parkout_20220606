@@ -45,7 +45,8 @@ namespace NRSUNG
         {
             //rig.AddForce(new Vector3(0, 30000, 0));
             //rig.AddForce(new Vector2(0, 350));,0
-            rig.AddForce(new Vector3(0, 1000, 0));
+            rig.AddForce(new Vector3(0, 3, 0));
+            
         }
     }
 }
