@@ -16,13 +16,13 @@ namespace NRSUNG
 
         [SerializeField] private SphereCollider sphere_collider;
         [SerializeField] private Camera cam;
-        //[SerializeField] private Rigidbody2D rig;
-        private Rigidbody rig;
+        [SerializeField] private Rigidbody rig;
+        //private Rigidbody rig;
 
         private void Awake()
         {
             //ani = GetComponent<Animator>();
-            rig = GetComponent<Rigidbody>();
+            //rig = GetComponent<Rigidbody>();
         }
 
         private void Start()
@@ -39,13 +39,14 @@ namespace NRSUNG
         {
             cube.transform.LookAt(sphere.transform.position);
             sphere.transform.Rotate(0, 3, 0);
+            rig.AddForce(new Vector3(0, 350, 0));
         }
 
         private void FixedUpdate()
         {
             //rig.AddForce(new Vector3(0, 30000, 0));
             //rig.AddForce(new Vector2(0, 350));,0
-            rig.AddForce(new Vector3(0, 3, 0));
+            //rig.AddForce(new Vector3(0, 3, 0));
             
         }
     }
