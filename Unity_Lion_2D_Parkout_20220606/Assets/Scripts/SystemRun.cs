@@ -67,6 +67,19 @@ namespace NRSUNG
             //print("<color=yellow>更新事件執行中~</color>");
             Run();
         }
+
+        // 此元件被勾選時,執行一次
+        private void OnEnable()
+        {
+            
+        }
+
+        // 此元件被取消時,執行一次
+        private void OnDisable()
+        {
+            // 剛體加速度歸零
+            rig.velocity = Vector2.zero;
+        }
         #endregion
 
     }
