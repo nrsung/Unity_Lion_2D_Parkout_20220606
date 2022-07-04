@@ -15,6 +15,8 @@ namespace NRSUNG
         private SystemRun systemRun;
         [SerializeField, Header("跳躍系統")]
         private SystemJump systemJump;
+        [SerializeField, Header("結束管理器")]
+        private ManagerFinal managerFinal;
         
 
         #region 其中一個物件有勾選 Is Trigger
@@ -26,6 +28,8 @@ namespace NRSUNG
             {
                 systemRun.enabled = false;
                 systemJump.enabled = false;
+                managerFinal.enabled = true;
+                managerFinal.stringTitle = "恭喜你過關~";
             }
         }
         // 兩個物件碰撞離開時執行一次
