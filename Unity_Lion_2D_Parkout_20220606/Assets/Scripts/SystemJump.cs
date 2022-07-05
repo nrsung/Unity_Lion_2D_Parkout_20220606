@@ -18,11 +18,16 @@ namespace NRSUNG
         private Color colorCheckGround = new Color(1, 0, 0.2f, 0.5f);
         [SerializeField, Header("檢查地板圖層")]
         private LayerMask layerCheckGround;
+        [SerializeField, Header("跳躍動畫參數")]
+        private string nameJump = "跳躍開關";
+        [SerializeField, Header("跳躍音效")]
+        private AudioClip soundJump;
 
         private Animator ani;
         private Rigidbody2D rig;
         private bool clickJump;
         private bool isGround;
+        private AudioSource aud;
         #endregion
 
         #region 事件
@@ -41,6 +46,7 @@ namespace NRSUNG
         {
             ani = GetComponent<Animator>();
             rig = GetComponent<Rigidbody2D>();
+            aud = GetComponent<AudioSource>();
         }
 
         // Input API 建議在 Update 呼叫
@@ -48,6 +54,7 @@ namespace NRSUNG
         {
             JumpKey();
             CheckGround();
+            UpdateAnimator();
         }
 
         private void FixedUpdate()
@@ -81,6 +88,7 @@ namespace NRSUNG
             {
                 rig.AddForce(new Vector2(0, heightJump));
                 clickJump = false;
+                aud.PlayOneShot(soundJump, Random.Range(0.7f, 1.5f));
             }
         }
 
@@ -93,6 +101,11 @@ namespace NRSUNG
             Collider2D hit = Physics2D.OverlapBox(transform.position + v3CheckGroundOffset, v3CheckGroundSize,0, layerCheckGround);
             //print("碰到的物件:" + hit.name);
             isGround = hit;
+        }
+
+        private void UpdateAnimator()
+        {
+            ani.SetBool(nameJump, !isGround);
         }
         #endregion
     }
